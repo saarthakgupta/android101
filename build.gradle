@@ -67,7 +67,11 @@ def extractVersionCode(v) {
     v = v.replaceAll("-SNAPSHOT", "")
     def(major, minor, build) = v.tokenize(".")
     def code = major.toInteger() * 10000 + minor.toInteger() * 100 + build.toInteger()
-    def commitCount = "git rev-list HEAD --count".execute().text.trim().toInteger()
+    def commitCount = 0
+    def commitStr = "git rev-list HEAD --count".execute().text.trim()
+    if (!commitStr.isEmpty()) {
+        commitCount = commitStr.toInteger()
+    }
     code = code * 10000 + commitCount
     return code
 }

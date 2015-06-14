@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
         new AsyncTask<Void,Void,Void>() {
             @Override
             protected Void doInBackground(Void... params) {
-                updateTextView("Hello cook!!!");
+                updateTextView("Hello cookv1!!!");
                 return null;
             }
         }.execute();

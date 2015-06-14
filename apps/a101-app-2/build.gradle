@@ -55,7 +55,19 @@ android {
         }
     }
 
+    productFlavors {
+        cookv1 {}
+        cookv2 {}
+    }
+
     publishNonDefault true
+}
+
+configurations {
+    cookv1ReleaseCompile
+    cookv1DebugCompile
+    cookv2ReleaseCompile
+    cookv2DebugCompile
 }
 
 dependencies {
@@ -63,8 +75,13 @@ dependencies {
     releaseCompile project(path: ':libs:a101-lib-1', configuration: 'release')
     debugCompile project(path: ':libs:a101-lib-1', configuration: 'debug')
 
-    releaseCompile project(path: ':libs:a101-lib-3', configuration: 'release')
-    debugCompile project(path: ':libs:a101-lib-3', configuration: 'debug')
+    //cookv1
+    cookv1ReleaseCompile project(path: ':libs:a101-lib-3', configuration: 'release')
+    cookv1DebugCompile project(path: ':libs:a101-lib-3', configuration: 'debug')
+
+    //cookv2
+    cookv2ReleaseCompile project(path: ':libs:a101-lib-4', configuration: 'release')
+    cookv2DebugCompile project(path: ':libs:a101-lib-4', configuration: 'debug')
 
     compile 'org.slf4j:slf4j-android:1.7.7'
 }
