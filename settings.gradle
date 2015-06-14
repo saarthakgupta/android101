@@ -1,0 +1,4 @@
+rootProject.name = 'android101'
+
+include ':libs:a101-lib-1', ':libs:a101-lib-2', ':libs:a101-lib-3', ':apps:a101-app-1', ':apps:a101-app-2'
+
