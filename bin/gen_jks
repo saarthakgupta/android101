@@ -7,5 +7,5 @@ script_pwd=${PWD}
 CERTS_DIR=${script_pwd}/../certs
 mkdir -p ${CERTS_DIR}
 rm -rf ${CERTS_DIR}/android.jks
-keytool -keystore ${CERTS_DIR}/android.jks -genkey -alias sysapp
+keytool -keystore ${CERTS_DIR}/android.jks -genkey -alias ineat.in
 ls -la ${CERTS_DIR}
